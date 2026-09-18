@@ -1,64 +1,9 @@
-# Posthog Workshop
+# Posthog-workshop
 
 Velkommen til en workshop i PostHog! 
 
 Etter workshopen vil du ha en bedre forståelse for funksjonaliteten PostHog tilbyr, og hvordan du kan bruke måleverktøy til å lage riktig ting.
 
-<details>
-  <summary>Oppsett for kodeprosjektet</summary>
-
-Her er oppsett for kode. Det forutsetter at du allerede har gjort oppgave 1a, hvor du får miljøvariabler.
-
-Legg inn .env-variabler, se .env.local.example. Legg til .env.local.
-
-## Kjør lokalt
-
-Installér avhengigheter:
-
-```bash
-pnpm install
-```
-
-Kjør prosjektet lokalt:
-
-```bash
-pnpm dev
-```
-
-Åpne [http://localhost:3000](http://localhost:3000).
-
-</details>
-
-<details>
-  <summary>Problemer med oppsett?</summary>
-
-### Kjør rett node-versjon
-
-Bruk lokal node-versjon, se `nvmrc.rc`:
-
-Last ned versjon: 
-```bash
-nvm install
-```
-
-Ta i bruk: 
-```bash
-nvm use
-```
-
-Alternativt, last ned rett versjon:
-
-
-
-### Last ned pnpm
-
-Du kan bruke npm eller andre kjøre-verktøy. pnpm er erstatning for npm:
-
-```bash
-npm install -g pnpm
-```
-
-</details>
 
 # Oppgaver
 
@@ -74,55 +19,65 @@ Ulike emojies betyr ulike ting:
 
 I denne oppgaven lærer du hvordan du setter opp Posthog og lager ditt første event. Når du er ferdig, skal du kunne se dine egne eventer i Posthog-dashboardet.
 
-### Oppgave 1a Oppsett
-
-![Screenshot workshop](./images/signup.png)
+<details>
+  <summary>Oppgave 1a - Oppsett</summary>
 
 Start med å klone repository.
 
+![Screenshot workshop](./images/setup1.png)
+
+
 Gå inn på https://eu.posthog.com/signup, opprett en bruker og en organisasjon, for eksempel "Hobby org".
 
-Så huk av for "Product analysis", og trykk "Get started".
+Velg "Improve the customer experience".
 
-![Screenshot workshop](./images/products_signup.png)
+![Screenshot workshop](./images/setup2.png)
 
-Trykk så inn på guide for "Next.js", om det ikke allerede er standardvalget. Dra secrets inn i `.env.local`.
+På steget "Install PostHog", trykk "Set up manually" og velg Next.js. 
 
-Vi har allerede initiert prosjektet med en `PostHogProvider.tsx`, se filen. Men du kan gjerne lese gjennom for å forstå hva som foregår.
+![Screenshot workshop](./images/setup3.png) ![Screenshot workshop](./images/setup4.png)
+
+Ignorer nudgingen til å bruke AI setup wizard, og scroll ned til miljøvariablene - lag en fil med navn `.env.local` og dra disse inn.
+
+![Screenshot workshop](./images/setup5.png)
+
+Resten av instruksjonene i oppsettet har vi allerede gjort i `PostHogProvider.tsx`, se filen. Men du kan gjerne lese gjennom for å forstå hva som foregår.
 
 For å fullføre oppsettet, kan du fyre opp prosjektet:
 
 ```
-pnpm install && pnpm dev
+npm install && npm run dev
 ```
 
-Så trykk deg rundt på siden. Om alt er rett, skal "Verify installation" være sjekket av, og du kan trykke "Continue".
+Så trykk deg rundt på siden. Om alt er rett, skal du se "Verify installation" markert i grønn nederst til venstre i PostHog, og du kan trykke "Next".
 
-![Screenshot workshop](./images/verify_signup.png)
+![Screenshot workshop](./images/setup6.png)
 
-For konfigurasjon av hvilke valg du vil ha med, huk av alt unntatt autocapture. Vi kommer heller til å bruke manuelt event.
+Skipp over "Add your website URLs", og velg gratis plan.
 
-![Screenshot workshop](./images/config_signup.png)
+Nå har du konfigurert opp et prosjekt! Vi skal også skru av autocapture - vi kommer heller til å sende alle eventer manuelt. Søk på "autocapture" og huk bort "Enable autocapture for web".
 
-Skipp over linked data.
+![Screenshot workshop](./images/setup7.png)
+![Screenshot workshop](./images/setup8.png)
 
-Velg gratis plan.
-
-Avslutt, uten å invitere teammedlemmer 🥲
-
+ 
 🎉 Hurra! Du har kommet deg gjennom masse config! I neste oppgave skal vi gjøre noe så gøy som å tracke ditt første event!
 
 💭 Refleksjon: Hvorfor bruke manuelle events istedenfor automatiske?
 
 📖 https://posthog.com/tutorials/event-tracking-guide#autocaptures-limitations
 
-### Oppgave 1b - Ditt første event
+</details>
 
-![Screenshot workshop](./images/first_click.png)
+<details>
+  <summary>Oppgave 1b - Ditt første event</summary>
 
 👉 Oppgave: Track hvilke FAQ- spørsmål som brukere åpner.
 - I koden, legg til manuelt event på FAQ-spørsmål. Se `page.tsx`.
-- I PostHog, sjekk fanen "Activity" for om eventet blir registrert.
+- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som ligner på skjermbildet under. Åpne et event og se at du får med hvilken seksjon som ble klikket på, i et event property.
+
+![Screenshot workshop](./images/first_click.png)
+
 
 📖 https://posthog.com/docs/getting-started/send-events
 
@@ -143,16 +98,21 @@ Se `oppgave1b.fasit.tsx`.
 
 </details>
 
+</details>
+
 ## Oppgave 2 - Visualiser innsikt
 
 I denne oppgaven lærer du hvordan du kan visualisere innsikt i PostHog ved å bruke trender og funnels. Dette er viktig for å forstå brukerens atferd og finne forbedringsmuligheter i produktet ditt.
 
-### Oppgave 2a - Trender
+<details>
+  <summary>Oppgave 2a - Trender</summary>
+
+En trend-graf viser hvordan en event utvikler seg over tid.
 
 ![Screenshot workshop](./images/trend.png)
 
-👉 Oppgave: Legg til en trend-annotasjon.
-- Se fanen "Product Analysis"
+👉 Oppgave: Lag en trend-graf med en annotasjon.
+- Se fanen "Product analysis"
 
 💭 Refleksjon:
 - Hva er vits med å følge med på trender?
@@ -160,7 +120,10 @@ I denne oppgaven lærer du hvordan du kan visualisere innsikt i PostHog ved å b
 
 📖 https://www.bekk.christmas/post/2024/07/forsta-produktet-ditt-med-posthog-lag-innsikt-ut-av-malingene
 
-### Oppgave 2b - Funnels
+</details>
+
+<details>
+  <summary>Oppgave 2b - Funnels</summary>
 
 ![Screenshot workshop](./images/funnel.png)
 
@@ -183,17 +146,18 @@ Dashboard:
 - Om du ser dropp i prosenter per steg, hva er det tegn på - og hva kan du eventuelt gjøre med det?
 - Hvordan kan du bruke funnels sammen med retention?
 
-📖 https://www.youtube.com/watch?v=2jQco8hEvTI&t=573s&ab_channel=PostHog
+</details>
 
-## Lag et dashboard
+##  Oppgave 3 - Lag et dashboard
 
 I denne oppgaven lærer du hvordan du kan samle innsikt i et dashboard i PostHog for å gjøre analyser mer oversiktlige og tilgjengelige.
 
-### Oppgave 3a - Lag et dashboard
+<details>
+  <summary>Oppgave 3 - Lag et dashboard</summary>
 
 ![Screenshot workshop](./images/dashboard.png)
 
-👉 Legg inn innsiktene du lagde i oppgave 2 inn på et nytt dashboard
+👉 Lag et nytt dashboard (ikke bruk default-dashboardet), og legg inn innsiktene du lagde i oppgave 2.
 
 💭 Refleksjon:
 - Hva er gode praksiser for å gjøre dashboardet oversiktlig?
@@ -201,13 +165,16 @@ I denne oppgaven lærer du hvordan du kan samle innsikt i et dashboard i PostHog
 
 📖 https://www.bekk.christmas/post/2024/08/forsta-produktet-ditt-med-posthog-samle-innsikt-i-produkt-dashboard
 
-## Lag et eksperiment
+</details>
+
+## Oppgave 4 - Lag et eksperiment
 
 I denne oppgaven lærer du hvordan du kan sette opp og gjennomføre et eksperiment i PostHog ved hjelp av feature flags og A/B-testing.
 
-Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere besøk enn en lukket accordion.
+I FAQ-seksjonen er det et accordion der første punkt har en lenke til funnelen. En hypotese er at hvis accordion på dette punktet er åpent, så vil flere klikke seg videre til funnelen, enn om den er lukket.
 
-### Oppgave 4a - Feature flagg
+<details>
+  <summary>Oppgave 4a - Feature flag</summary>
 
 👉 Gå inn på Experiments og opprett et nytt eksperiment. Generer samtidig et nytt feature flagg.
 
@@ -218,9 +185,12 @@ Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere b
 
 📖 https://posthog.com/docs/experiments/creating-an-experiment
 
-📖 https://youtu.be/2jQco8hEvTI?si=0946ThlaQu1FN2m_&t=776
+📖 https://www.youtube.com/watch?v=ZgxabccQZzM
 
-### Oppgave 4b - A/b- test
+</details>
+
+<details>
+  <summary>Oppgave 4b - A/B-test</summary>
 
 👉 Ta i bruk flagget i koden, så du kan kontrollere hvem som møter en åpen accordion og ikke.
 - Endre koden i `page.tsx`.
@@ -231,7 +201,8 @@ Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere b
 - Tenk på hvilke oppgaver du holder på med i oppdrag. Er noen av disse aktuelle for eksperimenter?
 
 📖 https://www.bekk.christmas/post/2024/09/forst%C3%A5-produktet-ditt-med-posthog-hypoteser
-📖 https://www.youtube.com/watch?v=2jQco8hEvTI&t=847s&ab_channel=PostHog
+
+📖 https://www.youtube.com/watch?v=WyYPPSyKmXo
 
 <details>
   <summary>Løsning 4b</summary>
@@ -240,11 +211,14 @@ Kode: Se `oppgave4b.fasit.tsx`.
 
 </details>
 
+</details>
+
 ## Session replay
 
 I denne oppgaven lærer du hvordan du kan bruke Session Replay i PostHog for å se opptak av brukerøkter og analysere brukeradferd.
 
-### Oppgave 5 - Session replay
+<details>
+  <summary>Oppgave 5 - Session replay</summary>
 
 👉 Oppgave: Spill av et opptak fra en tidligere sesjon
 
@@ -254,19 +228,25 @@ I denne oppgaven lærer du hvordan du kan bruke Session Replay i PostHog for å 
 - Hvordan kan du filtrere bort sensitiv informasjon fra opptak?
 
 📖 https://posthog.com/tutorials/session-recordings-for-support
+
 📖 https://posthog.com/docs/session-replay/privacy
+
+</details>
 
 ## Tilbake til oppdrag
 
 Nå har du fullført fem grunnleggende oppgaver for å forstå greia med måling i Posthog 🎉 Hvordan ta dette videre?
 
-### Oppgave 6 - Tilbake til oppdrag
+<details>
+  <summary>Oppgave 6 - Tilbake til oppdrag</summary>
 
 💭 For å ta dette videre, reflektér over følgende:
 - Hvordan sørge for at du jevnlig jobber produktnært?
 - Hvordan velge oppgavene som gir mest verdi for brukerne?
 
 📖 https://www.bekk.christmas/post/2024/10/forsta-produktet-ditt-med-posthog-fra-innsikt-til-produktbeslutninger
+
+</details>
 
 # Ekstra oppgaver
 

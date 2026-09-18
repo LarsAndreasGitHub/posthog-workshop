@@ -10,14 +10,14 @@ import { PostHogProvider as PHProvider } from "posthog-js/react";
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (
-      !process.env.NEXT_PUBLIC_POSTHOG_KEY ||
+      !process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN ||
       !process.env.NEXT_PUBLIC_POSTHOG_HOST
     ) {
       throw new Error(
-        "Add NEXT_PUBLIC_POSTHOG_KEY and NEXT_PUBLIC_POSTHOG_HOST to .env"
+        "Add NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN and NEXT_PUBLIC_POSTHOG_HOST to .env"
       );
     }
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN, {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
       capture_pageview: false, // Disable automatic pageview capture, as we capture manually
     });
