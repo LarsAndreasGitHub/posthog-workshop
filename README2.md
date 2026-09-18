@@ -74,7 +74,7 @@ Nå har du konfigurert opp et prosjekt! Vi skal også skru av autocapture - vi k
 
 👉 Oppgave: Track hvilke FAQ- spørsmål som brukere åpner.
 - I koden, legg til manuelt event på FAQ-spørsmål. Se `page.tsx`.
-- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som
+- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som ligner på skjermbildet under.
 
 ![Screenshot workshop](./images/first_click.png)
 
