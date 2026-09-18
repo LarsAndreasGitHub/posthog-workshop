@@ -146,20 +146,18 @@ Dashboard:
 - Om du ser dropp i prosenter per steg, hva er det tegn på - og hva kan du eventuelt gjøre med det?
 - Hvordan kan du bruke funnels sammen med retention?
 
-📖 https://www.youtube.com/watch?v=2jQco8hEvTI&t=573s&ab_channel=PostHog
-
 </details>
 
-## Lag et dashboard
+##  Oppgave 3 - Lag et dashboard
 
 I denne oppgaven lærer du hvordan du kan samle innsikt i et dashboard i PostHog for å gjøre analyser mer oversiktlige og tilgjengelige.
 
 <details>
-  <summary>Oppgave 3a - Lag et dashboard</summary>
+  <summary>Oppgave 3 - Lag et dashboard</summary>
 
 ![Screenshot workshop](./images/dashboard.png)
 
-👉 Legg inn innsiktene du lagde i oppgave 2 inn på et nytt dashboard
+👉 Lag et nytt dashboard (ikke bruk default-dashboardet), og legg inn innsiktene du lagde i oppgave 2.
 
 💭 Refleksjon:
 - Hva er gode praksiser for å gjøre dashboardet oversiktlig?
@@ -169,14 +167,14 @@ I denne oppgaven lærer du hvordan du kan samle innsikt i et dashboard i PostHog
 
 </details>
 
-## Lag et eksperiment
+## Oppgave 4 - Lag et eksperiment
 
 I denne oppgaven lærer du hvordan du kan sette opp og gjennomføre et eksperiment i PostHog ved hjelp av feature flags og A/B-testing.
 
 Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere besøk enn en lukket accordion.
 
 <details>
-  <summary>Oppgave 4a - Feature flagg</summary>
+  <summary>Oppgave 4a - Feature flag</summary>
 
 👉 Gå inn på Experiments og opprett et nytt eksperiment. Generer samtidig et nytt feature flagg.
 
@@ -187,12 +185,12 @@ Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere b
 
 📖 https://posthog.com/docs/experiments/creating-an-experiment
 
-📖 https://youtu.be/2jQco8hEvTI?si=0946ThlaQu1FN2m_&t=776
+📖 https://www.youtube.com/watch?v=ZgxabccQZzM
 
 </details>
 
 <details>
-  <summary>Oppgave 4b - A/b- test</summary>
+  <summary>Oppgave 4b - A/B-test</summary>
 
 👉 Ta i bruk flagget i koden, så du kan kontrollere hvem som møter en åpen accordion og ikke.
 - Endre koden i `page.tsx`.
