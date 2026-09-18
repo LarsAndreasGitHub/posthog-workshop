@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-funnel-data": "node scripts/generate-funnel-data.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.3",

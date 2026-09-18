@@ -131,6 +131,13 @@ En trend-graf viser hvordan en event utvikler seg over tid.
 - Skjemaet kan du navigere deg til via navbar og trykke på "Funnel"
 - I koden, legg inn et event per spørsmål i skjemaet. Koden finner du i `/funnel/page.tsx`.
 - I PostHog, kan du legge til Funnel også under "Product analysis". Legg inn action per steg
+- For å fylle funnelen med historiske testdata kan du kjøre `npm run generate-funnel-data`. Scriptet lager organisk trafikk for flere fake brukere de siste 7 dagene, med samme event-navn som i fasiten.
+
+Du kan også justere mengde og periode:
+
+```
+npm run generate-funnel-data -- --users=200 --days=14 --traffic=organic
+```
 
 <details>
   <summary>Løsning 2b</summary>
@@ -213,7 +220,7 @@ Kode: Se `oppgave4b.fasit.tsx`.
 
 </details>
 
-## Session replay
+## Oppgave 5 - Session replay
 
 I denne oppgaven lærer du hvordan du kan bruke Session Replay i PostHog for å se opptak av brukerøkter og analysere brukeradferd.
 
@@ -233,7 +240,7 @@ I denne oppgaven lærer du hvordan du kan bruke Session Replay i PostHog for å 
 
 </details>
 
-## Tilbake til oppdrag
+## Oppgave 6 - Tilbake til oppdrag
 
 Nå har du fullført fem grunnleggende oppgaver for å forstå greia med måling i Posthog 🎉 Hvordan ta dette videre?
 
