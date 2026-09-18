@@ -74,7 +74,7 @@ Nå har du konfigurert opp et prosjekt! Vi skal også skru av autocapture - vi k
 
 👉 Oppgave: Track hvilke FAQ- spørsmål som brukere åpner.
 - I koden, legg til manuelt event på FAQ-spørsmål. Se `page.tsx`.
-- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som ligner på skjermbildet under.
+- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som ligner på skjermbildet under. Åpne et event og se at du får med hvilken seksjon som ble klikket på, i et event property.
 
 ![Screenshot workshop](./images/first_click.png)
 
@@ -107,10 +107,12 @@ I denne oppgaven lærer du hvordan du kan visualisere innsikt i PostHog ved å b
 <details>
   <summary>Oppgave 2a - Trender</summary>
 
+En trend-graf viser hvordan en event utvikler seg over tid.
+
 ![Screenshot workshop](./images/trend.png)
 
-👉 Oppgave: Legg til en trend-annotasjon.
-- Se fanen "Product Analysis"
+👉 Oppgave: Lag en trend-graf med en annotasjon.
+- Se fanen "Product analysis"
 
 💭 Refleksjon:
 - Hva er vits med å følge med på trender?
