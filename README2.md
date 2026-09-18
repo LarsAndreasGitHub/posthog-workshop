@@ -20,7 +20,7 @@ Ulike emojies betyr ulike ting:
 I denne oppgaven lærer du hvordan du setter opp Posthog og lager ditt første event. Når du er ferdig, skal du kunne se dine egne eventer i Posthog-dashboardet.
 
 <details>
-  <summary>Oppgave 1a Oppsett</summary>
+  <summary>Oppgave 1a - Oppsett</summary>
 
 Start med å klone repository.
 
@@ -53,18 +53,14 @@ Så trykk deg rundt på siden. Om alt er rett, skal du se "Verify installation" 
 
 ![Screenshot workshop](./images/setup6.png)
 
-![Screenshot workshop](./images/verify_signup.png)
+Skipp over "Add your website URLs", og velg gratis plan.
 
-For konfigurasjon av hvilke valg du vil ha med, huk av alt unntatt autocapture. Vi kommer heller til å bruke manuelt event.
+Nå har du konfigurert opp et prosjekt! Vi skal også skru av autocapture - vi kommer heller til å sende alle eventer manuelt. Søk på "autocapture" og huk bort "Enable autocapture for web".
 
-![Screenshot workshop](./images/config_signup.png)
+![Screenshot workshop](./images/setup7.png)
+![Screenshot workshop](./images/setup8.png)
 
-Skipp over linked data.
-
-Velg gratis plan.
-
-Avslutt, uten å invitere teammedlemmer 🥲
-
+ 
 🎉 Hurra! Du har kommet deg gjennom masse config! I neste oppgave skal vi gjøre noe så gøy som å tracke ditt første event!
 
 💭 Refleksjon: Hvorfor bruke manuelle events istedenfor automatiske?
@@ -76,11 +72,12 @@ Avslutt, uten å invitere teammedlemmer 🥲
 <details>
   <summary>Oppgave 1b - Ditt første event</summary>
 
-![Screenshot workshop](./images/first_click.png)
-
 👉 Oppgave: Track hvilke FAQ- spørsmål som brukere åpner.
 - I koden, legg til manuelt event på FAQ-spørsmål. Se `page.tsx`.
-- I PostHog, sjekk fanen "Activity" for om eventet blir registrert.
+- I PostHog, sjekk fanen "Activity" for om eventet blir registrert. Du vil se noe som
+
+![Screenshot workshop](./images/first_click.png)
+
 
 📖 https://posthog.com/docs/getting-started/send-events
 
