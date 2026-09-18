@@ -171,7 +171,7 @@ I denne oppgaven lærer du hvordan du kan samle innsikt i et dashboard i PostHog
 
 I denne oppgaven lærer du hvordan du kan sette opp og gjennomføre et eksperiment i PostHog ved hjelp av feature flags og A/B-testing.
 
-Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere besøk enn en lukket accordion.
+I FAQ-seksjonen er det et accordion der første punkt har en lenke til funnelen. En hypotese er at hvis accordion på dette punktet er åpent, så vil flere klikke seg videre til funnelen, enn om den er lukket.
 
 <details>
   <summary>Oppgave 4a - Feature flag</summary>
@@ -201,7 +201,8 @@ Du skal teste om en åpen accordion med en lenke til "funnel" fører til flere b
 - Tenk på hvilke oppgaver du holder på med i oppdrag. Er noen av disse aktuelle for eksperimenter?
 
 📖 https://www.bekk.christmas/post/2024/09/forst%C3%A5-produktet-ditt-med-posthog-hypoteser
-📖 https://www.youtube.com/watch?v=2jQco8hEvTI&t=847s&ab_channel=PostHog
+
+📖 https://www.youtube.com/watch?v=WyYPPSyKmXo
 
 <details>
   <summary>Løsning 4b</summary>
@@ -227,6 +228,7 @@ I denne oppgaven lærer du hvordan du kan bruke Session Replay i PostHog for å 
 - Hvordan kan du filtrere bort sensitiv informasjon fra opptak?
 
 📖 https://posthog.com/tutorials/session-recordings-for-support
+
 📖 https://posthog.com/docs/session-replay/privacy
 
 </details>
